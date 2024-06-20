@@ -1,7 +1,12 @@
  const http = require('http');
 
+ const homePage = require('./home');
+
   const server = http.createServer((req, res) => {
-    res.write('Hello');
+    res.writeHead(200, {
+        'Content-Type': 'text/html'
+    });
+    res.write(homePage);
     res.end();
   });
 

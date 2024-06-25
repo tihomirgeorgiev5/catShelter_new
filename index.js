@@ -1,6 +1,6 @@
  const http = require('http');
 
- const homePage = require('./home');
+ const homePage = require('./views/home');
  const siteCSS = require('./styles/site');
  const addCatPage = require('./views/addCat')
 
@@ -18,7 +18,7 @@
 
         res.write(addCatPage);
     } else {
-        
+         
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });

@@ -1,8 +1,10 @@
  const http = require('http');
-
  const homePage = require('./views/home');
  const siteCSS = require('./styles/site');
- const addCatPage = require('./views/addCat')
+ const addCatPage = require('./views/addCat');
+ const cats = require('./cats.json');
+
+ console.log(cats);
 
   const server = http.createServer((req, res) => {
     if (req.url == '/styles/site.css')  {
@@ -11,14 +13,13 @@
         });
 
         res.write(siteCSS);
-   
         
     } 
     else if (req.url== '/cats/add-cat') {
 
         res.write(addCatPage);
     } else {
-         
+        
         res.writeHead(200, {
             'Content-Type': 'text/html'
         });
